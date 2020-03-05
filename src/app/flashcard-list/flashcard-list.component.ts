@@ -12,7 +12,7 @@ export class FlashcardListComponent {
   constructor(public web: WebService) { }
 
   saveAnswer(answer) {
-    console.log('answer', answer);
+    this.web.saveAnswer(answer);
   }
 
 }
