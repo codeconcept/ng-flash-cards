@@ -11,4 +11,8 @@ export class FlashcardListComponent {
 
   constructor(public web: WebService) { }
 
+  saveAnswer(answer) {
+    console.log('answer', answer);
+  }
+
 }

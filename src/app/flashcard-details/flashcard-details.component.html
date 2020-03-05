@@ -4,7 +4,9 @@
       {{card.question}}
     </div>
     <div class="back">
-      {{card.answer}}
+      {{card.answer}}<br />
+      <button (click)="setAnswer(true)">right anwser</button>
+      <button (click)="setAnswer(false)">wrong anwser</button>
     </div>
   </div>
 </div>

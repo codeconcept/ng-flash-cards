@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Answer } from '../interfaces/answer';
 
 @Component({
   selector: 'app-flashcard-details',
@@ -7,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FlashcardDetailsComponent implements OnInit {
   @Input() card;
+  @Output() answer = new EventEmitter<Answer>();
+
   showAnswer = false;
 
   constructor() { }
@@ -16,6 +19,10 @@ export class FlashcardDetailsComponent implements OnInit {
 
   flip() {
     this.showAnswer = !this.showAnswer;
+  }
+
+  setAnswer(isRight) {
+    this.answer.emit({ card: this.card, isRight });
   }
 
 }
