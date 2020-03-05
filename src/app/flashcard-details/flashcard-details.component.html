@@ -1,0 +1,10 @@
+<div class="flip-container" [class.flip]="showAnswer" (click)="flip()">
+  <div class="flipper">
+    <div class="front">
+      {{card.question}}
+    </div>
+    <div class="back">
+      {{card.answer}}
+    </div>
+  </div>
+</div>

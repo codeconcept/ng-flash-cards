@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+/* https: //davidwalsh.name/css-flip */
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 400px;
+  border: 2px solid orange;
+  margin: 15px;
+}
+
+/* flip the pane when flip css class programmatically added */
+.flip-container.flip .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container,
+.front,
+.back {
+  width: 250px;
+  height: 100px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+  background-color: brown;
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  background-color: rgb(42, 110, 165);
+}

@@ -1,3 +1,5 @@
 <div>
-  <div *ngFor='let card of web.cards'>{{card.question}}</div>
+  <div *ngFor='let card of web.cards'>
+    <app-flashcard-details [card]="card"></app-flashcard-details>
+  </div>
 </div>
