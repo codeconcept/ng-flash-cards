@@ -1,5 +1,12 @@
+<h1>Flash Cards</h1>
 <div>
   <div *ngFor='let card of web.cards'>
     <app-flashcard-details [card]="card" (answer)="saveAnswer($event)"></app-flashcard-details>
+  </div>
+</div>
+<div class="card" *ngIf="web.allCardsAnswered">
+  <div class="card-body d-flex justify-content-center">
+    <button class="btn btn-danger m-2">restart</button>
+    <button class="btn btn-success m-2">save</button>
   </div>
 </div>
