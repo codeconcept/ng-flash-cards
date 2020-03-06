@@ -25,4 +25,13 @@ export class FlashcardListComponent {
     });
   }
 
+  reset() {
+    this.web.reset().subscribe(data => {
+      console.log('reset SUCCESS', data);
+      this.web.getCards();
+    }, err => {
+      console.log('reset FAILURE', err);
+    });
+  }
+
 }

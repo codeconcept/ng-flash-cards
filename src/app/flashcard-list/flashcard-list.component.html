@@ -6,7 +6,7 @@
 </div>
 <div class="card" *ngIf="web.allCardsAnswered">
   <div class="card-body d-flex justify-content-center">
-    <button class="btn btn-danger m-2">restart</button>
+    <button class="btn btn-danger m-2" (click)="reset()">reset</button>
     <button class="btn btn-success m-2" (click)="saveAll()">save</button>
   </div>
 </div>

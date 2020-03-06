@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Card } from '../interfaces/card';
-import { Answer } from '../interfaces/answer.ts';
+import { Answer } from '../interfaces/answer';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,10 @@ export class WebService {
   saveAnswer(answer) {
     this.answers = [...this.answers, answer];
     console.log('all answers', this.answers);
+  }
+
+  reset() {
+    return this.http.post<{ reset: true }>(`${this.BASE_URL}/cards/reset`, { reset: true });
   }
 
   get allCardsAnswered() {
