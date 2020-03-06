@@ -19,6 +19,7 @@ export class FlashcardListComponent {
   saveAll() {
     this.web.saveAllAnswersToServer().subscribe(data => {
       console.log('saveAllAnswersToServer SUCCESS', data);
+      this.web.getCards();
     }, err => {
       console.error('saveAllAnswersToServer FAILURE', err);
     });

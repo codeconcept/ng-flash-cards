@@ -13,18 +13,19 @@ export class WebService {
   answers = [];
 
   constructor(private http: HttpClient) {
-    this.getCards()
+    this.getCards();
+  }
+
+  getCards() {
+    this.http.get<Card[]>(`${this.BASE_URL}/cards`)
       .subscribe(data => {
         this.cards = data;
         console.log('cards', this.cards);
+        this.answers = [];
       }, error => {
           this.error = error;
           console.error(error);
       });
-  }
-
-  getCards() {
-    return this.http.get<Card[]>(`${this.BASE_URL}/cards`);
   }
 
   saveAnswer(answer) {
