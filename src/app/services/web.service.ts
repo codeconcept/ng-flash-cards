@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Card } from '../interfaces/card';
+import { Answer } from '../interfaces/answer.ts';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,9 @@ export class WebService {
 
   get allCardsAnswered() {
     return this.answers.length === this.cards.length;
+  }
+
+  saveAllAnswersToServer() {
+    return this.http.post<Answer[]>(`${this.BASE_URL}/cards`, this.answers);
   }
 }

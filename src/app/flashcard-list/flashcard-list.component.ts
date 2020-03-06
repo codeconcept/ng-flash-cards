@@ -8,11 +8,20 @@ import { WebService } from './../services/web.service';
 })
 export class FlashcardListComponent {
   cards = [];
+  error = null;
 
   constructor(public web: WebService) { }
 
   saveAnswer(answer) {
     this.web.saveAnswer(answer);
+  }
+
+  saveAll() {
+    this.web.saveAllAnswersToServer().subscribe(data => {
+      console.log('saveAllAnswersToServer SUCCESS', data);
+    }, err => {
+      console.error('saveAllAnswersToServer FAILURE', err);
+    });
   }
 
 }
