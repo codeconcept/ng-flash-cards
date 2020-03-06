@@ -2,7 +2,6 @@
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 400px;
-  border: 2px solid orange;
   margin: 15px;
 }
 
@@ -14,8 +13,8 @@
 .flip-container,
 .front,
 .back {
-  width: 250px;
-  height: 100px;
+  width: 350px;
+  height: 150px;
 }
 
 /* flip speed goes here */
@@ -32,6 +31,8 @@
   position: absolute;
   top: 0;
   left: 0;
+  padding: 10px;
+  color: white;
 }
 
 /* front pane, placed above back */
